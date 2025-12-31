@@ -2,7 +2,9 @@ package com.project.fitness_monolith.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 @Entity
 @Table(name = "user_entity")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
