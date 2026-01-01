@@ -17,15 +17,22 @@ public class UserService {
     private final UserRepository userRepository;
 
     public UserResponse register(RegisterRequest registerRequest) {
-        User user = new User(null,
-                registerRequest.getEmail(),
-                registerRequest.getPassword(),
-                registerRequest.getFirstName(),
-                registerRequest.getLastName(),
-                LocalDateTime.now(),
-                LocalDateTime.now(),
-                List.of(),
-                List.of());
+//        User user = new User(null,
+//                registerRequest.getEmail(),
+//                registerRequest.getPassword(),
+//                registerRequest.getFirstName(),
+//                registerRequest.getLastName(),
+//                LocalDateTime.now(),
+//                LocalDateTime.now(),
+//                List.of(),
+//                List.of());
+
+        User user = User.builder()
+                .email(registerRequest.getEmail())
+                .password(registerRequest.getPassword())
+                .firstName(registerRequest.getFirstName())
+                .lastName(registerRequest.getLastName())
+                .build();
 
         User savedUser = userRepository.save(user);
 
