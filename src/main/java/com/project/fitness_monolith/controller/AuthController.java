@@ -2,7 +2,6 @@ package com.project.fitness_monolith.controller;
 
 import com.project.fitness_monolith.dto.RegisterRequest;
 import com.project.fitness_monolith.dto.UserResponse;
-import com.project.fitness_monolith.entity.User;
 import com.project.fitness_monolith.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
