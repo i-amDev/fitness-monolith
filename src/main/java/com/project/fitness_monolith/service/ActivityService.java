@@ -31,7 +31,11 @@ public class ActivityService {
 
         Activity savedActivity = activityRepository.save(activity);
 
-        ActivityResponse activityResponse = ActivityResponse.builder()
+        return mapToActivityResponse(savedActivity);
+    }
+
+    private ActivityResponse mapToActivityResponse(Activity savedActivity) {
+        return ActivityResponse.builder()
                 .id(savedActivity.getId())
                 .userId(savedActivity.getUser().getId())
                 .type(savedActivity.getType())
@@ -40,8 +44,6 @@ public class ActivityService {
                 .caloriesBurned(savedActivity.getCaloriesBurned())
                 .startTime(savedActivity.getStartTime())
                 .build();
-
-        return activityResponse;
     }
 
 }
